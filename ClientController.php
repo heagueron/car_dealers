@@ -142,8 +142,8 @@ class ClientController extends Controller
          return $conecion = mysqli_connect($dsn, $username, $pass,$database);
     }
 /**
-        El codigo de Recepcion llega hasta acá
-
+ *       El codigo de Recepcion llega hasta acá
+ *
 **/
 
     /**
