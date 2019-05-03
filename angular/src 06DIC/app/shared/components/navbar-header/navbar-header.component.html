@@ -1,0 +1,23 @@
+<div *ngIf="loggedIn$ | async">
+    <nav class="navbar p-l-5 p-r-5">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <div class="navbar-header">
+                    <a class="bars"></a>
+                    <a class="navbar-brand" routerLink="/dashboard">
+                        <img class="header-logo" src="assets/images/logos/logo-blanco-completo.png" width="30" alt="seller">
+                        <span class="spacer"></span>
+                    </a>
+                </div>
+            </li> 
+            <li class="float-right">
+                <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true">
+                    <i class="zmdi zmdi-fullscreen"></i>
+                </a>
+                <a class="mega-menu" data-close="true" (click)="logout()">
+                    <i class="zmdi zmdi-power"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

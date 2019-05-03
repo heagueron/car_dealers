@@ -1,0 +1,148 @@
+
+<div class="row clearfix" style="z-index: 5; " >
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="body">                        
+                    <div class="tab-content">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                    <i *ngIf="isLoading===true" class="zmdi zmdi-settings zmdi-hc-spin"></i>
+                            </div>
+                            <div class="input-group search pull-right col-lg-6 col-md-6" style="width:30%">
+                                    <input type="text" class="form-control" placeholder="Buscar...">
+                                    <span class="input-group-addon">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </span>
+                            </div> 
+                        </div>
+                            
+
+                        <div class="tab-pane active" id="contacts_container" >
+                            <div class="table-responsive">
+                                <table class="table table-hover m-b-0 c_list">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Nombre</th>                                    
+                                            <th>Apellido</th>                                    
+                                            <th>Teléfono</th>
+                                            <th>E-mail</th>
+                                            <th>Motivo de Contacto</th>                                    
+                                            <th>Producto</th>
+                                            <th>Atiende</th>
+                                            <th>Canal</th>                                    
+                                            <th data-toggle="tooltip" data-placement="top" title="Empatía Vendedor">E1</th>
+                                            <th data-toggle="tooltip" data-placement="top" title="Empatía Cliente">E2</th>
+                                            <th><i class="zmdi zmdi-comment-alt-text"></i></th>
+                                            <th>Delegar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let contact of contacts$ | async">
+                                                <td *ngIf="contact != selectedContact">{{ contact.date | date:'dd-MM' }} {{ contact.date | date:'HH:mm' }}</td> 
+                                                <td *ngIf="contact == selectedContact">{{'Hoy'}} {{ dateNow | date:'HH:mm' }}</td>    
+                                                <td *ngIf="contact != selectedContact">{{ contact.name }}</td>
+                                                <td *ngIf="contact == selectedContact">
+                                                        <input value="{{contact.name}}">
+                                                </td>
+                                                <td *ngIf="contact != selectedContact">{{ contact.last_name }}</td>
+                                                <td *ngIf="contact == selectedContact">
+                                                        <input value="{{contact.last_name}}">
+                                                </td>
+                                                <td *ngIf="contact != selectedContact">{{ contact.phone }}</td>
+                                                <td *ngIf="contact == selectedContact">
+                                                        <input value="{{contact.phone}}">
+                                                </td>
+                                                <td *ngIf="contact != selectedContact">{{ contact.mail }}</td>
+                                                <td *ngIf="contact == selectedContact">
+                                                        <input value="{{contact.mail}}">
+                                                </td>
+                                                <td *ngIf="contact != selectedContact">{{ contact.reason }}</td>
+                                                <td *ngIf="contact == selectedContact">
+
+                                                    <select class="ml-3" placeholder="--- Seleccione ---"  >
+                                                        <option value="1">Venta de planes</option>
+                                                        <option value="3">Venta Usados</option>
+                                                        <option value="4" selected="selected">Ventas</option>
+                                                        <option value="5">Adm Plan Ahorro</option>
+                                                        <option value="6">Cupón Plan</option>
+                                                        <option value="7">Adm Convencional</option>
+                                                        <option value="8">Administracion</option>
+                                                        <option value="9">Servicio</option>
+                                                        <option value="10">Repuestos</option>
+                                                        <option value="11">Entregas</option>
+                                                    </select>
+
+                                                </td>
+
+                                                <td>{{ contact.product }}</td>
+                                                <td>{{ contact.seller_name }}&nbsp;{{ contact.seller_lastname }}&nbsp;</td>
+                                                <td>{{ contact.channel }}</td>
+                                                <td><i class="fa {{contact.empathy_user_client}}"></i></td>
+                                                <td><i class="fa {{contact.empathy_client_user}}"></i></td>
+                                                <td *ngIf="contact != selectedContact">{{ contact.comment_id }}</td>
+                                                <td *ngIf="contact == selectedContact">
+                                                        <input value="">
+                                                </td>
+                                                <td>
+                                                    <a *ngIf="contact != selectedContact" 
+                                                        class="btn btn-icon btn-neutral btn-icon-mini" 
+                                                        (click)="showRegisterModal( contact )">
+                                                        <i class="zmdi zmdi-share"></i>
+                                                    </a>
+                                                    <!--
+                                                        <a *ngIf="contact != selectedContact" 
+                                                        class="btn btn-icon btn-neutral btn-icon-mini" 
+                                                        (click)="showRegisterModal( contact )"
+                                                        data-toggle="modal" 
+                                                        data-target="#receptionModal"
+                                                        data-close="true">
+                                                        <i class="zmdi zmdi-share"></i>
+                                                    </a>
+                                                    -->
+
+                                                  <button *ngIf="contact == selectedContact" class="btn btn-icon btn-neutral btn-icon-mini" ><i class="zmdi zmdi-save" (click)="saveContact(contact)"></i>&nbsp;&nbsp;<i class="zmdi zmdi-close" (click)="closeContact(contact)"></i></button>
+                                                </td>
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                                                
+                    </div>
+                </div>
+            </div>                
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="body">
+
+                    <div class="row">
+                    
+                        <div class="col-lg-6 col-md-6">
+
+                    <ul class="pagination pagination-primary m-b-0">
+                        <li class="page-item"><a class="page-link" href="#"><i class="zmdi zmdi-arrow-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="zmdi zmdi-arrow-right"></i></a></li>
+                    </ul>
+
+                        </div>
+
+                        
+
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+              

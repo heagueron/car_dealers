@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="title" id="largeModalLabel">Carga ID DMS</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="form-group col-lg-12">
+            <input type="text" class="form-control" placeholder="IDS">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default btn-round waves-effect">GUARDAR</button>
+    <button type="button" class="btn btn-danger waves-effect" (click)="activeModal.dismiss('Cross click')">CERRAR</button>
+</div>

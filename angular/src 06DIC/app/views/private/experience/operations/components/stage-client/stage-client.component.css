@@ -1,0 +1,12 @@
+.list-icon img {
+    border-radius: 100%;
+}
+.name, .empaty {
+    margin-bottom: 0;
+}
+.name {
+    margin-top: -8px;
+}
+.empaty {
+    margin-top: -26px;
+}

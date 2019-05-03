@@ -1,0 +1,50 @@
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#FFC323;
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top: 8px;
+}
+
+.margin_check{
+	margin: inherit;
+}
+
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+  
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.display_flex{
+	display: flex !important;
+}
+
+.margin-label{
+	margin: 0.8em 0 !important;
+}
+
+.margin_auto{
+	margin: auto;
+}
+
+.btn-lead-new{
+	background-color: #FFC323;
+	color: #FFF;
+}
+

@@ -1,0 +1,104 @@
+<div *ngIf="client">
+  <div class="row">
+    <div class="close app-text-link app-color-primary" (click)="closeSide()">
+      <i class="zmdi zmdi-close"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="client-card">
+        <div class="row">
+            <div class="col-lg-5 text-right">
+              <a href="#" class="text-gray hint--top" aria-label="Categoria" id="panel_category" data-toggle="modal" data-target=".modalCategory">
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="col-lg-2 text-center">
+              <div class="client-img">
+                <img src="http://via.placeholder.com/100x100" alt="User">
+              </div>
+            </div>
+            <div class="col-lg-5 text-left">
+              <a href="#" class="text-gray hint--top" aria-label="Empatía" id="panel_emphatie">
+                <i class="fa fa-meh-o fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <h5 class="name"><strong></strong></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <p><strong>Telefono:</strong> +584244369980</p>
+          </div>
+          <div class="col">
+              <p><strong>Movil:</strong> +584244369980</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <p><strong>Email:</strong> ivan_sm_5@hotmail.com</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <p><strong>Direccion:</strong> Guacara, ciudad alianza</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 90px;">
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Usuario</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Competencia</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Experiencia</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Entorno</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul class="nav nav-tabs">
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Perfil</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tareas</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Fotos</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Documentos</a>
+            </li>
+            <li class="nav-item col-lg-3 text-center">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Comentarios</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div>
+    </div>
+  </div>
+</div>

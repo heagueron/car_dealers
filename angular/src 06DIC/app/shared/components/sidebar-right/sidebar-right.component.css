@@ -1,0 +1,7 @@
+.right-sidebar {
+    width: 42%;
+    right: -42%;
+}
+.right-sidebar.openSB {
+    right: 0;
+}

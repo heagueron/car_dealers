@@ -1,0 +1,90 @@
+
+
+<div class="row clearfix">
+
+    <div class="col-lg-4">
+
+        <div class="input-group" style="width: 100%">                
+                    <input type="text" class="form-control" placeholder="Nombre/Apellido/DNI" [formControl]="queryField">
+                    <span class="input-group-addon">
+                        <i class="zmdi zmdi-search"></i>
+                    </span>
+        </div>
+
+        
+            <ng-select id="resultSelector"
+            
+            *ngIf="results.length > 0 " 
+            class="custom"
+            [items] = "results"
+            placeholder="Seleccione ..." 
+            (change)="selectedClient( $event )"
+            formControlGroup="selClient"
+            bindLabel="name"
+            bindValue="id"
+            >
+            <!--
+                <ng-option 
+                *ngFor="let result of results | slice:0:9"
+                
+                data-toggle="modal" 
+                data-target="#receptionModal"
+                data-close="true">
+                    {{ result.name }}
+            </ng-option>
+            -->
+            
+        </ng-select>
+       
+         
+        
+
+
+<!--
+
+        
+            <div class="body" style="z-index: 10; position: fixed;">
+            <ul *ngIf="results" class="list-group">
+                <li 
+                    *ngFor="let result of results | slice:0:9" 
+                    class="list-group-item"
+                    (click)="selectedClient( result )"
+                    data-toggle="modal" 
+                    data-target="#receptionModal"
+                    data-close="true">
+                    {{ result.name }} 
+                </li>
+                <li *ngIf="results.length>0" class="list-group-item">Más resultados ... </li>
+            </ul>
+        </div>
+ -->        
+
+        
+        
+        
+
+        
+        
+
+    </div>
+    
+    
+    <div class="col-sm-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-calendar"></i>
+            </span>
+            <input type="text" class="form-control datetimepicker" placeholder="Desde..." data-dtp="dtp_3amL9">
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="zmdi zmdi-calendar"></i>
+            </span>
+            <input type="text" class="form-control datetimepicker" placeholder="Hasta..." data-dtp="dtp_3amL9">
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+.close {
+    z-index: 2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.profile-header .profile-image img {
+    border-radius: 50%;
+    width: 180px;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+/*.seller-card {
+    position: relative;
+    top: 40%;
+    background: #ffc323;
+    padding: 10px;
+}
+.seller-card .seller-img img {
+    width: 100px;
+    border: 3px solid;
+    border-radius: 100%;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+}
+.seller-card .name, .seller-card .cargo, .seller-card .category, .seller-card .empaty {
+    margin-top: 15px;
+    line-height: 0.5em;
+}
+.seller-img {
+    margin-top: -60px;
+}*/

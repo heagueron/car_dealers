@@ -1,0 +1,299 @@
+<div class="modal-header">
+    <h4 class="title" id="largeModalLabel">SOLICITUD DE COMPRA</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row"> 
+        <div class="col-lg-3">
+            <label for="title_x" class="hint--top" aria-label="Número de Presupuesto">
+                <i class="fa fa-hashtag"></i>
+                <span id="modal_title-budget">20</span>
+            </label>
+        </div>
+        <div class="col-lg-3">
+            <label for="title_x" class="hint--top" aria-label="Cliente">
+                <i class="fa fa-user-circle fa-lg text-bold"></i>
+                <span id="modal_title-client">Eliecer Cedano</span>
+            </label>
+        </div>
+        <div class="col-lg-3">
+            <label for="title_x" class="hint--top" aria-label="Productos Agregados">
+                <i class="fa fa-shopping-cart  fa-lg"></i> 
+                <span id="modal_title-product">1 Item(s)</span>
+            </label>
+        </div>
+        <div class="col-lg-3">
+            <label for="title_x" class="hint--top" aria-label="Actividades de Seguimiento">
+                <i class="fa fa-calendar-data-o fa-lg"></i>
+                <span id="modal_title-activity">1 Actividad</span>
+            </label>
+        </div>
+    </div>
+    <hr style="margin: 5px 0;">
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-tabs mb-3" id="navTab" role="tablist">
+                <div class="liner"></div>
+                <li class="text-center">
+                    <a class="nav-item nav-link active" data-toggle="pill" href="#pills-client" role="tab" aria-controls="pills-client" aria-selected="true">
+                        <span> 
+                            <i class="fa fa-user fa-2x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="text-center">
+                    <a class="nav-item nav-link" data-toggle="pill" href="#pills-product" role="tab" aria-controls="pills-product" aria-selected="false">
+                        <span> 
+                            <i class="fa fa-shopping-cart fa-2x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="text-center">
+                    <a class="nav-item nav-link" data-toggle="pill" href="#pills-expenses" role="tab" aria-controls="pills-expenses" aria-selected="false">
+                        <span> 
+                            <i class="fa fa-usd fa-2x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="text-center">
+                    <a class="nav-item nav-link" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false">
+                        <span> 
+                            <i class="fa fa-calendar fa-2x"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="text-center">
+                    <a class="nav-item nav-link" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed" aria-selected="false">
+                        <span> 
+                            <i class="fa fa-check fa-2x"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr style="margin: 20px 0; margin-top: -18px;">
+    <div class="row">
+        <div class="col">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-client" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label for="tarea"><strong>CONTACTO</strong></label>
+                            <ng-select class="custom" [items]="selectOptionsContact" bindLabel="name" bindValue="id" placeholder="Apellido / Nombre / DNI"></ng-select>
+                        </div>
+                        <div class="col-lg-7">
+                            <h6 class="text-center">Persona Juridica</h6>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-12 text-center">
+                                            <a href="javascript:void(0);">
+                                                <span class="list-icon" aria-label="2">
+                                                    <img class="patients-img" src="http://via.placeholder.com/50x50" alt="" style="width: 70px; height: auto;">
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 text-right">
+                                            <a href="#" class="text-gray hint--top" aria-label="Categoria">
+                                                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="text-gray hint--top" aria-label="Empatía">
+                                                <i class="fa fa-meh-o fa-2x" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <input type="text" class="form-control" placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-lg-12">
+                                            <input type="text" class="form-control" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                    <i class="fa fa-user"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                    <i class="fa fa-info"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-users"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-reorder"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-share-alt"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-map-marker"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <!--<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                    <i class="fa fa-comments"></i>
+                                </a>-->
+                            </div>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Tipo de telefono"></ng-select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <ng-select class="custom" placeholder="Codigo telefonico del pais"></ng-select>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Codigo de Área">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Numero de Telefono">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Interno">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Tipo de Email"></ng-select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <input type="emial" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <ng-select class="custom" placeholder="Genero"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Teleconferencia"></ng-select>
+                                        </div>
+                                    </div>
+                                    <!--<div class="row">
+                                        <div class="col-md-3 text-center">
+                                            <a href="" class="btn btn-primary">Agregar</a>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Nacionalidad"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="CUIT">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Empleado estado"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Tipo factura"></ng-select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Tipo de documento"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="DNI">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Empleado estado"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Estado civil"></ng-select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Profesion"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <ng-select class="custom" placeholder="Cargo"></ng-select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ng-select class="custom" placeholder="Rubro"></ng-select>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Empresa">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    <p>hola</p>
+                                    <p>hola</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab">
+                    <div class="row">
+                        <div class="col">
+                            Producto
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-expenses" role="tabpanel" aria-labelledby="pills-expenses-tab">
+                    <div class="row">
+                        <div class="col">
+                            Gastos
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-activities" role="tabpanel" aria-labelledby="pills-activities-tab">
+                    <div class="row">
+                        <div class="col">
+                            Actividades
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">
+                    <div class="row">
+                        <div class="col">
+                            Completado
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer text-right">
+    <!--<button type="button" class="btn btn-default btn-round waves-effect">SAVE CHANGES</button>-->
+    <button type="button" class="btn btn-danger waves-effect" (click)="activeModal.dismiss('Cross click')">CERRAR</button>
+</div>

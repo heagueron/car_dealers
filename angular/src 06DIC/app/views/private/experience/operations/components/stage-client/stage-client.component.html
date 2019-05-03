@@ -1,0 +1,46 @@
+<div class="text-center">
+    <a href="javascript:void(0);">
+        <span class="list-icon hint--bottom" aria-label="2" attr.data-dropdown="{{'#dropdown-client-'+id}}">
+            <img class="patients-img" src="http://via.placeholder.com/50x50" alt="" style="border: 2px solid #fff;">
+        </span>
+    </a>
+    <p class="name">
+        <a class="btn btn-link btn-sm" href="javascript:void(0);" [routerLink]="['/experience/operations', {outlets: {rightSidenav: ['client-operation', id]}}]" (click)="openSidebar()">
+            <span>{{client.name}} {{client.last_name}}</span>
+        </a>
+    </p>
+    <p class="empaty">
+        <a class="btn btn-link btn-sm" href="javascript:void(0);">
+            <i class="zmdi zmdi-mood"></i>
+        </a>
+    </p>
+</div>
+<div class="dropdown-menu dropdown-anchor-left-center dropdown-has-anchor" attr.id="{{'dropdown-client-'+id}}" style="display: block; top: 22.5px; left: 39px; width: 250px;">
+    <table class="bg-basic" style="width: 100%;">
+        <tbody>
+            <tr>
+                <th style=" padding: 5px 0;"> <span class="dropdown-title">Opciones</span></th>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" (click)="openModalCategory(id)">
+                <i class="zmdi zmdi-star-outline"></i>
+                <span>Categoria</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" (click)="openModalPurchaseRequest(id)">
+                <i class="zmdi zmdi-file-text"></i>
+                <span class="hint--bottom" aria-label="Sin datos de producto">Solicitud de compra</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" (click)="openModalLoadIdDms(id)">
+                <i class="zmdi zmdi-alarm"></i>
+                <span>Cargar ID(DMS)</span>
+            </a>
+        </li>
+    </ul>
+</div>

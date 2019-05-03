@@ -1,0 +1,245 @@
+
+
+<div class="modal fade" id="receptionModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <div class="col-lg-7 col-md-6 col-sm-12">
+                  <h4>Recepción</h4>
+              </div>
+          </div>
+          
+          <form (ngSubmit)="saveReception()" [formGroup]="receptionForm">
+
+          <div class="modal-body">
+              <div class="container-fluid">        
+                  <div class="row clearfix">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                          <div class="card">
+                              
+                              <div class="header">
+                                    <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                    <h2><strong>Nueva</strong> Recepción<small>Ingrese los datos para esta recepción.</small> </h2>
+                                            </div>
+                                            <div class="col-sm-6 pull-right">
+                                                    <p>Derivación</p>
+                                                    <span class="radio">
+                                                            <input type="radio" name="radio1" id="radio1" value="option1" checked=""
+                                                                (click)="setDerivationType(1)">
+                                                            <label for="radio1">Auto</label>
+                                                        </span>
+                                                                    
+                                                    <span class="radio">
+                                                            <input type="radio" name="radio1" id="radio2" value="option2" 
+                                                                (click)="setDerivationType(2)">
+                                                            <label for="radio2">Manual</label>
+                                                    </span>
+
+                                            </div>
+                                    </div>
+
+                              </div>
+
+                              <div class="body">
+
+                                  <div class="row clearfix">
+
+                                  <div class="col-sm-6">
+
+                                      <div class="form-group input-group">
+                                          <span class="input-group-addon" Style="background-color:goldenrod"><small>Nombre:&nbsp;&nbsp;</small></span>
+                                          <input type="text" 
+                                              class="form-control" 
+                                              formControlName="name"
+                                              name="name">
+                                      </div>
+
+                                  </div>
+
+                                  <div class="col-sm-6">
+
+                                      <div class="form-group input-group">
+                                          <span class="input-group-addon" Style="background-color:goldenrod"><small>Apellido:&nbsp;&nbsp;</small></span>
+                                          <input type="text" 
+                                              class="form-control" 
+                                              formControlName="last_name"
+                                              name="last_name">
+                                      </div>
+
+                                  </div>
+
+                                  </div>
+
+                                  <div class="row clearfix">
+
+                                  <div class="col-sm-3">
+                                      <div class="form-group input-group">
+                                          <span class="input-group-addon"><i class="zmdi zmdi-phone"></i></span>
+                                          <input type="text" 
+                                              class="form-control"
+                                              placeholder="Teléfono"
+                                              formControlName="phone"
+                                              name="phone">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-sm-3">
+                                      <div class="form-group input-group">
+                                          <span class="input-group-addon"><i class="zmdi zmdi-smartphone-android"></i></span>
+                                          <input type="text" 
+                                              class="form-control"
+                                              placeholder="Nro celular"
+                                              formControlName="mobile"
+                                              name="mobile">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-sm-6">
+                                      <div class="form-group input-group">
+                                          <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                                          <input type="text" 
+                                              class="form-control"
+                                              placeholder="E-mail"
+                                              formControlName="mail"
+                                              name="mail">
+                                      </div>
+                                  </div>
+
+                                  </div>    
+
+                                  <div class="row clearfix" style="height: 50px;">
+
+                                      <div class="col-sm-4">
+                                          <ng-select class="custom" 
+                                              [items]="selectReasonOptions" 
+                                              bindLabel="name" 
+                                              bindValue="id" 
+                                              placeholder="Motivo"
+                                              formControlName="reason_id"
+                                              title="Motivo"
+                                              clearAllText="Resetear selección">
+                                          </ng-select> 
+                                      </div>
+
+                                      <div class="col-sm-4">
+                                          <ng-select class="custom" 
+                                              [items]="selectProductOptions" 
+                                              bindLabel="name" 
+                                              bindValue="id" 
+                                              placeholder="Producto"
+                                              formControlName="product_id"
+                                              title="Producto"
+                                              clearAllText="Resetear selección">
+                                          </ng-select> 
+                                      </div>
+
+                                    <div class="col-sm-4">
+                                        <ng-select *ngIf="derivationType==2" class="custom" 
+                                            [items]="receptionSellers" 
+                                            bindLabel="fullname" 
+                                            bindValue="id" 
+                                            placeholder="Vendedor"
+                                            formControlName="seller_id"
+                                            title="Vendedor"
+                                            clearAllText="Resetear selección">
+                                        </ng-select>
+                                        <p *ngIf="derivationType==1" title="Vendedor">{{ shownSeller.fullname }}</p>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="row clearfix" style="height: 50px;">
+
+                                      <div class="col-sm-4">
+                                          <ng-select class="custom" 
+                                              [items]="selectChannelOptions" 
+                                              bindLabel="name" 
+                                              bindValue="id" 
+                                              placeholder="Canal"
+                                              formControlName="channel_id"
+                                              title="Canal"
+                                              clearAllText="Resetear selección">
+                                          </ng-select> 
+                                      </div>
+
+                                      <div class="col-sm-2">
+                                          <ng-select class="custom" 
+                                              [items]="selectEmpathyOptions" 
+                                              bindLabel="name" 
+                                              bindValue="id" 
+                                              placeholder="Empatía UC"
+                                              formControlName="empathy_user_client_id"
+                                              title="Empatía usuario-cliente"
+                                              clearAllText="Resetear selección">
+                                          </ng-select> 
+                                      </div>
+
+                                      <div class="col-sm-2">
+                                          <ng-select class="custom" 
+                                              [items]="selectEmpathyOptions" 
+                                              bindLabel="name" 
+                                              bindValue="id" 
+                                              placeholder="Empatía CU"
+                                              formControlName="empathy_client_user_id"
+                                              title="Empatía cliente-usuario"
+                                              clearAllText="Resetear selección">
+                                          </ng-select> 
+                                      </div>
+
+                                  </div>
+
+                                  <div class="row clearfix">
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea rows="4" class="form-control no-resize" formControlName="comment" placeholder="Comentario..."></textarea>
+                                        </div>
+                                    </div> 
+
+
+
+                                    <div class="col-sm-12">
+
+                                                <button 
+                                                type="submit" 
+                                                class="btn btn-primary btn-round"
+                                                (click)="saveReception()"
+                                                [disabled]="receptionForm.invalid ">Guardar</button>
+        
+                                                <button 
+                                                type="submit" 
+                                                (click)="cancelEditReception()"
+                                                class="btn btn-default btn-round waves-effect"
+                                                data-dismiss="modal">Cancelar</button>
+
+
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <i *ngIf="processing===true" class="zmdi zmdi-settings zmdi-hc-spin"></i>
+                                    </div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div> <!-- Modal Body end -->
+
+          </form>
+
+          <!--
+              <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-round waves-effect">Guardar</button>
+              <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
+          </div>
+          -->
+          
+
+      </div>
+  </div>
+</div>

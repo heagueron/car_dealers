@@ -1,0 +1,25 @@
+.close {
+    z-index: 2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.client-card {
+    position: relative;
+    top: 40%;
+    background: #ffc323;
+    padding: 10px;
+}
+.client-card .client-img img {
+    width: 150px;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    /*box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);*/
+}
+.client-card .name, .client-card .cargo, .client-card .category, .client-card .empaty {
+    margin-top: 15px;
+    line-height: 0.5em;
+}
+.client-img {
+    margin-top: -60px;
+}

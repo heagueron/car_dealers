@@ -1,0 +1,44 @@
+a {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    line-height: 18px;
+    padding: 5px 15px;
+    white-space: nowrap;
+    transition: all 0.1s;
+}
+
+.nav li {
+    z-index: 2;
+    width: 20%;
+}
+
+#navTab .nav-item {
+    height: 60px;
+    width: 60px;
+    border: solid 1px #999;
+    border-radius: 100%;
+    padding: 14px;
+    margin: 0 auto;
+    background: #fff;
+    
+}
+
+.liner {
+    height: 2px;
+    background: #ddd;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 45%;
+    z-index: 1;
+}
+.list-icon img {
+    border-radius: 100%;
+}
+
+.form-control { 
+    border-radius: 4px;
+}

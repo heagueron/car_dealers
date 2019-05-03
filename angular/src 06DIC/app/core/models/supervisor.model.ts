@@ -1,0 +1,97 @@
+import { BaseModel } from './base.model';
+
+export interface SupervisorModel extends BaseModel {
+  birthday: string;
+  cellphone: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  gender: string;
+  id_company: number;
+  phone: string;
+}
+
+/*export interface CategoryModel extends BaseModel {
+  category: string;
+  condition: string;
+  icon: string;
+}
+
+export interface ChannelModel extends BaseModel {
+  channel: string;
+  details: string;
+  icon: string;
+  order: string;
+}
+
+export interface SupervisorEmailModel extends BaseModel {
+  Supervisor_id: number;
+  id: number;
+  id_type_mail: number;
+  mail: string;
+  principal: number;
+}
+
+export interface SupervisorContactModel extends BaseModel {
+  area_code: number;
+  cliend_id: number;
+  ext_phone: string;
+  id: number;
+  id_paises: number;
+  id_type_phone: number;
+  order: string;
+  phone: string;
+  wsp: string;
+}
+
+export interface OriginModel extends BaseModel {
+  id_brand_origin: number;
+  id_parent: number;
+  order: string;
+  origin: string;
+}
+
+export interface SocialNetworkModel extends BaseModel {
+  facebook: string;
+  google: string;
+  instagram: string;
+  linkedin: string;
+  twitter: string;
+  cellphone: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  gender: string;
+  id_company: number;
+  phone: string;
+}
+*/
+export interface SupervisoresResponseModel {
+  current_page: number;
+  data: SupervisorModel[];
+  from: number;
+  last_page: number;
+  next_page_url: string;
+  path: string;
+  per_page: number;
+  prev_page_url: string;
+  to: number;
+  total: number;
+}
+
+export interface Company extends BaseModel {
+  cuit: string;
+  database_name: string;
+  database_pass: string;
+  database_user: string;
+  direccion: string;
+}
+
+export interface SupervisorObjectModel {
+  id: string;
+  value: string;
+}
+
+export interface SupervisorPayloadModel {
+  supervisores: SupervisoresResponseModel;
+}

@@ -1,0 +1,57 @@
+<div *ngIf="seller">
+  <div class="row">
+    <div class="close app-text-link app-color-primary" (click)="closeSide()">
+      <i class="zmdi zmdi-close"></i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card profile-header">
+        <div class="body text-center">
+            <div class="profile-image">
+              <img src="http://via.placeholder.com/80x80" alt="">
+            </div>
+            <div>
+              <div class="row">
+                  <div class="col text-center">
+                    <a href="#" class="text-gray hint--top" aria-label="Empatía" id="panel_emphatie">
+                      <i class="fa fa-meh-o fa-2x" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <div class="col">cvp</div>
+              </div>
+              <h4 class="m-b-0">
+                <strong>{{seller.first_name}} {{seller.last_name}}</strong>
+              </h4>
+              <br>
+              <div class="row">
+                  <div class="col">Ranking ventas</div>
+                  <div class="col">Top ventas</div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col">{{seller.cargo}}</div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col text-right">
+                    <button class="btn btn-primary btn-round">Email</button>
+                  </div>
+                  <div class="col text-left">
+                      <button class="btn btn-primary btn-round btn-simple">Mensajes</button>
+                  </div>
+              </div>
+              <br>
+              <div class="row text-center">
+                <div class="col"><a title="Twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></div>
+                <div class="col"><a title="Facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a></div>
+                <div class="col"><a title="Google-plus" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a></div>
+                <div class="col"><a title="Behance" href="javascript:void(0);"><i class="zmdi zmdi-behance"></i></a></div>
+                <div class="col"><a title="Instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram "></i></a></div>
+              </div>
+            </div>
+        </div>                    
+      </div>              
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h4 class="title" id="largeModalLabel">Tarea</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-3">
+            <label for="tarea">Tarea</label>
+            <ng-select class="custom" [items]="selectOptionsTask" bindLabel="name" bindValue="id" placeholder="Seleccionar"></ng-select>
+        </div>
+        <div class="col-lg-3">
+            <label for="tarea">Motivo</label>
+            <ng-select class="custom" [items]="selectOptionsReason" bindLabel="name" bindValue="id" placeholder="Seleccionar"></ng-select>
+        </div>
+        <div class="col-lg-3">
+            <label for="tarea">Fecha</label>
+            <div class="input-group">
+                <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <label for="tarea">Resultado</label>
+            <ng-select class="custom" [items]="selectOptionsResult" bindLabel="name" bindValue="id" placeholder="Seleccionar"></ng-select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <div class="form-line">
+                    <label for="tarea">Comentario</label>
+                    <textarea rows="2" class="form-control no-resize" placeholder="Comentario"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <!--<button type="button" class="btn btn-default btn-round waves-effect">GUARDAR</button>-->
+    <button type="button" class="btn btn-danger waves-effect" (click)="activeModal.dismiss('Cross click')">CERRAR</button>
+</div>

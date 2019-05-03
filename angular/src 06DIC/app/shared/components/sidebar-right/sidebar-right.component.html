@@ -1,0 +1,5 @@
+<div *ngIf="loggedIn$ | async">
+    <aside id="rightsidebar" class="right-sidebar" [ngClass]="{openSB: (openSidebar$ | async)}">
+        <router-outlet name="rightSidenav"></router-outlet>
+    </aside>
+</div>

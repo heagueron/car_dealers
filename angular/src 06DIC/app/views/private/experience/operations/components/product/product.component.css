@@ -1,0 +1,13 @@
+ul {
+    list-style: none;
+    width: 300px;
+    padding: 0;
+}
+ul li {
+    padding: 0 5px;
+    float: left;
+    font-size: 0.8em;
+}
+ul li .row .col {
+    padding: 0 2px;
+}

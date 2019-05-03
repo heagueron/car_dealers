@@ -1,0 +1,164 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="exampleModalLongTitle">Asignación de Leads</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row mt-3 mb-3 ml-2 mr-2">
+                    <h6>
+                        Indique los usuarios a los cuales les puede asignar los leads antes seleccionados
+                    </h6>
+                    <!-- <div class="col  col-md-6">
+                        <h6>Leads seleccionados</h6>
+                        <ul>
+                            <li *ngFor="let lead of leads">{{ lead }}</li>
+                        </ul>                        
+                    </div>
+
+                    <div class="col col-md-6">
+                        <h6>Método de derivación seleccionado</h6>
+                        <ul>
+                            <li *ngIf="derivacion === 1">Proactiva Automática</li>
+                            <li *ngIf="derivacion === 2">Manual</li>
+                            <li *ngIf="derivacion === 3">Automática</li>
+                        </ul>
+                    </div> -->
+                </div>
+                <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#equipo_gerentes">Gerentes</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#equipo_supervisores">Supervisores</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vendedores">Vendedores</a></li>
+                    </ul>
+                <div class="tab-content">
+                    <div class="tab-pane stretchRight" id="vendedores">
+                        <ul class="mail_list list-group list-unstyled">
+                            <li *ngFor="let seller of sellers; let i = index" class="list-group-item" [class.opacidad] = " seller.status === 'Deshabilitado' ">
+                                <div class="media">
+                                    <div class="pull-left" style="display: -webkit-inline-box">                                
+                                        <div class="controls" style="display: -webkit-inline-box">
+                                            <div class="checkbox">
+                                                <input type="checkbox" [disabled] = " seller.status === 'Deshabilitado' " id="vendedor_checkbox_{{ i }}" (click) = "vendedor_selected(seller.id)">
+                                                <label for="vendedor_checkbox_{{ i }}"></label>
+                                            </div>
+                                            <a href="javascript:void(0);" class="favourite col-amber hidden-sm-down" data-toggle="active"><i class="zmdi zmdi-star"></i></a>
+                                        </div>
+                                        <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar10.jpg" class="rounded-circle" alt=""> </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="media-heading">
+                                            <a href="javascript:void(0)" class="m-r-10">{{ seller.first_name }} {{ seller.last_name }}</a>
+                                            <span class="badge" [class.bg-green] = "seller.status === 'Habilitado'" [class.bg-red] = "seller.status === 'Deshabilitado'">{{ seller.status }}</span>
+                                        </div>
+                                        <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="body">                            
+                                    <ul class="pagination pagination-primary m-b-0">
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-left"></i></a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane stretchLeft" id="equipo_supervisores">
+                            <ul class="mail_list list-group list-unstyled">
+                                <li *ngFor="let supervisor of supervisores; let i = index" class="list-group-item" [class.opacidad] = " supervisor.status === 'Deshabilitado'">
+                                    <div class="media">
+                                        <div class="pull-left" style="display: -webkit-inline-box">                                
+                                            <div class="controls" style="display: -webkit-inline-box">
+                                                <div class="checkbox">
+                                                    <input  [disabled] = " supervisor.status === 'Deshabilitado' " type="checkbox" id="supervisor_checkbox_{{ i }}" (click) = "supervisor_selected(i)">
+                                                    <label for="supervisor_checkbox_{{ i }}"></label>
+                                                </div>
+                                                <a href="javascript:void(0);" class="favourite col-amber hidden-sm-down" data-toggle="active"><i class="zmdi zmdi-star"></i></a>
+                                            </div>
+                                            <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar10.jpg" class="rounded-circle" alt=""> </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="media-heading">
+                                                <a href="javascript:void(0)" class="m-r-10">{{ supervisor.first_name }} {{ supervisor.last_name }}</a>
+                                                <span class="badge" [class.bg-green] = "supervisor.status === 'Habilitado'" [class.bg-red] = "supervisor.status === 'Deshabilitado'">{{ supervisor.status }}</span>
+                                            </div>
+                                            <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="body">                            
+                                    <ul class="pagination pagination-primary m-b-0">
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-left"></i></a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane stretchLeft active" id="equipo_gerentes">
+                            <ul class="mail_list list-group list-unstyled">
+                                <li *ngFor="let gerente of gerentes; let i = index" class="list-group-item" [class.opacidad]="gerente.status === 'Deshabilitado'">
+                                    <div class="media">
+                                        <div class="pull-left" style="display: -webkit-inline-box">                                
+                                            <div class="controls" style="display: -webkit-inline-box">
+                                                <div class="checkbox">
+                                                    <input *ngIf="gerente.status === 'Habilitado'" type="checkbox" id="gerente_checkbox_{{ i }}" (click) = "gerente_selected(i)">
+                                                    <input *ngIf="gerente.status === 'Deshabilitado'" disabled type="checkbox" id="gerente_checkbox_{{ i }}" (click) = "gerente_selected(i)">
+                                                    <label for="gerente_checkbox_{{ i }}"></label>
+                                                </div>
+                                                <a href="javascript:void(0);" class="favourite col-amber hidden-sm-down" data-toggle="active"><i class="zmdi zmdi-star"></i></a>
+                                            </div>
+                                            <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar10.jpg" class="rounded-circle" alt=""> </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="media-heading">
+                                                <a href="javascript:void(0)" class="m-r-10">{{ gerente.first_name }} {{ gerente.last_name }}</a>
+                                                <span class="badge" [class.bg-green] = "gerente.status === 'Habilitado'" [class.bg-red] = "gerente.status === 'Deshabilitado'">{{ gerente.status }}</span>
+                                            </div>
+                                            <p class="msg">Lorem Ipsum is simply dumm dummy text of the printing and typesetting industry. </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="body">                            
+                                    <ul class="pagination pagination-primary m-b-0">
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-left"></i></a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-round waves-effect" (click)="set_enpoind()">Asignar Leads</button>
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

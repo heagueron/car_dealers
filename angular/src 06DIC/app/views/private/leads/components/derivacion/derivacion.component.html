@@ -1,0 +1,118 @@
+<aside id= "leads-module">    
+  <section class="content">
+      <div class="block-header">
+          <div class="row">
+            <div class="col-12 col-md-8"></div>
+            <div class="col-6 col-md-4 col-lg-12 text-right mb-4">            
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a routerLink="/dashboard"><i class="zmdi zmdi-home"></i> Home</a></li>
+                        <li class="breadcrumb-item active">Leads</li>
+                        <li class="breadcrumb-item active">Bandeja de Leads</li>
+
+                    </ul>
+            </div>
+              <div class="col-md-12 text-left">
+                  <h2>Bandeja de Leads</h2>
+              </div>
+          </div>    
+      </div>
+      <div class="container-fluid">
+          <div class="row clearfix">
+                  <div class="card">                    
+                      <div class="body"> 
+                            <div *ngIf="alert_by_derivation" class="alert alert-danger text-center" role="alert">
+                                Debe seleccionar el tipo de <a href="javascript:void(0)" class="alert-link">DERIVACIÓN</a> de leads que va a emplear
+                            </div>
+
+                            <div *ngIf="alert_by_empty_leads" class="alert alert-danger text-center" role="alert">
+                                    Debe seleccionar al menos un <a href="javascript:void(0)" class="alert-link">LEAD</a> de la lista
+                                </div>
+                            <div class="mb-3">
+                                <div class="row">
+                                    
+                                    <!-- <div class="col"> -->
+                                    <!-- </div> -->
+                                    <!-- <div class="col"> -->
+                                    <!-- </div> -->
+                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="input-group-prepend animated margin-label float-left" [ngClass]="pulse_dev">
+                                            <h6 class="input-group-text margin_auto" for="inputGroupSelect01">Tipos de derivación: </h6>
+                                        </div>
+                                        <ng-select class="ml-3 float-left" placeholder="--- Seleccione ---" [(ngModel)]="selectedDerivationId" id="inputGroupSelect01" #selection_derivation (change) = "deactivate_pulse()">
+                                            <ng-option [value] = "1">Proactiva Automática</ng-option>
+                                            <ng-option [value] = "2">Manual</ng-option>
+                                            <ng-option [value] = "3">Automática</ng-option>
+                                        </ng-select>
+                                        <span aria-label="Crear Lead" class="list-icon hint--top float-right">
+                                            <button class="btn btn-lead-new btn-round btn-icon js-right-sidebar" data-close="true" type="button">
+                                                <i class="zmdi zmdi-plus"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="table-responsive">
+                              <table class="table table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th>Seleccione</th>
+                                          <th>Fecha</th>
+                                          <th>Origen</th>
+                                          <th>Nombre</th>
+                                          <th>Apellido</th>
+                                          <th>Email</th>
+                                          <th>Teléfono</th>
+                                          <th>Móvil</th>
+                                          <th>Código del Vehículo</th>
+                                          <th>Producto</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody *ngIf="leads">
+                                      <tr *ngFor="let lead of leads;let i = index">
+                                          <td class="text-center">
+                                              <div class="checkbox">
+                                                  <input id="checkbox{{ i }}a" type="checkbox" (click)="selected_lead( lead )">
+                                                  <label for="checkbox{{ i }}a" class="margin_check"></label>
+                                              </div>
+                                          </td>
+                                          <td>{{ lead.fecha }}</td>
+                                          <td>{{ lead.origin }}</td>
+                                          <td>{{ lead.name }}</td>
+                                          <td>{{ lead.last_name }}</td>
+                                          <td>{{ lead.email }}</td>
+                                          <td>{{ lead.pre_phone }}-{{ lead.phone }}</td>
+                                          <td>{{ lead.pre_movibile }}-{{ lead.mobile }}</td>
+                                          <td>{{ lead.vehicle_code }}</td>
+                                          <td>{{ lead.producto }}</td>
+                                      </tr>                                
+                                  </tbody>
+                              </table>
+                          </div>
+                          <div class="col-lg-12">
+                              <div class="card">
+                                  <div class="body">                            
+                                      <ul class="pagination pagination-primary m-b-0">
+                                          <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-left"></i></a></li>
+                                          <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                          <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                          <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                                          <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                                          <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="zmdi zmdi-arrow-right"></i></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                            <a (click)=" show_modal() " class="float js-left-sidebar" data-toggle="modal" data-target="#exampleModalCenter" data-close="true">
+                                <span aria-label="Asignar Leads" class="list-icon hint--bottom">
+                                    <i class="zmdi zmdi-check zmdi-hc-3x my-float"></i>
+                                </span>
+                            </a>
+                      </div>
+                  </div>
+          </div>
+      </div>    
+  </section>
+</aside>
+
+<app-selection-users *ngIf="modal_flag" [leads] = "seleted_leads_ids" [derivacion] = "selectedDerivationId"></app-selection-users>

@@ -1,0 +1,51 @@
+<section class="content">
+    <div class="block-header">
+  
+        <div class="row">
+            <div class="col-sm-12">
+                <!--
+                    <p>Display event : {{displayEvent | json}}</p>
+                -->
+                
+                <div *ngIf="calendarOptions">
+                    <ng-fullcalendar #ucCalendar [options]="calendarOptions"
+                        style="background-color: white;"
+                        
+                        (eventClick)    = "showDefaultTask($event.detail)" 
+
+                        (eventClick)    = "eventClick($event.detail)" 
+
+                        (eventDrop)     = "updateEvent($event.detail)"
+                        (eventResize)   = "updateEvent($event.detail)"
+                        (dayClick)      = "dayClick($event.detail)"
+                        (clickButton)   = "clickButton($event.detail)">
+                    </ng-fullcalendar>
+                </div>
+
+            </div> 
+        </div>
+  
+    </div>
+
+    <!--
+        <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal" data-target="#defaultModal">MODAL - DEFAULT SIZE</button>
+    -->
+    
+    
+    <a id="openDefaultModal" class="float js-left-sidebar" 
+        data-toggle="modal" data-target="#defaultModal" 
+        data-close="true" style="display:none">
+
+    </a>
+    
+    
+  
+  </section>
+  <app-default-task *ngIf="defaultTaskFlag"
+  [title]="title"
+  ></app-default-task>
+
+
+  <!--
+      (eventClick)    = "eventClick($event.detail)" 
+  -->
